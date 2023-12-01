@@ -1,21 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveController : Player
+public class MoveController : MonoBehaviour
 {
-    [SerializeField] public Animator Animator;
-    
-    void Update()
+    [SerializeField]
+    public Animator Animator;
+    [SerializeField]
+    private Rigidbody2D _rb;
+    [SerializeField]
+    protected float _speed;
+    [SerializeField]
+    private int _direction;
+
+    private void Move(float direction)
     {
-        float horizontalMovement = Input.GetAxis("Horizontal");
-        float verticalMovement = Input.GetAxis("Vertical");
+        _rb.AddForce(_speed * direction * transform.up, ForceMode2D.Impulse);
+    }
 
-        transform.position += new Vector3(horizontalMovement, verticalMovement, 0) * _speed * Time.deltaTime;
-
-        PlayfieldConstriction(horizontalMovement, verticalMovement);
-
-        Animator.SetFloat("horizontalMovement", Mathf.Abs(horizontalMovement));
-        Animator.SetFloat("horizontalMovement", Mathf.Abs(verticalMovement));
+    void Start()
+    {
+        Move(_direction);
     }
 }
+

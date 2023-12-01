@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2913068821214562740}
-  - component: {fileID: 2913068821214562741}
+  - component: {fileID: -4111278087174161901}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2913068821214562741
+--- !u!114 &-4111278087174161901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,8 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2913068821214562738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc62cca5a19f50948b350e0fb5fd5295, type: 3}
+  m_Script: {fileID: 11500000, guid: e85462ebb7866094c97e60f5cb2cbd30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obj: {fileID: 3710413724240840463, guid: dcb9d5dbf16ae9c4497ba7ff588fa600, type: 3}
-  _spawnDelay: 2
+  _missileType: {fileID: 3710413724240840463, guid: dcb9d5dbf16ae9c4497ba7ff588fa600, type: 3}
+  _firePoint: {fileID: 0}
+  _spawnDelay: 0.5

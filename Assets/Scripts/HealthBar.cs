@@ -1,15 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class HealthBar : Player
+public class HealthBar : MonoBehaviour
 {
-    public Image Bar;
+    [SerializeField]
+    private Image _bar;
+
+    private void HealthBarAnimation()
+    {
+        _bar.fillAmount = GameObject.FindWithTag("Player").GetComponent<Health>().HealthPoint;
+    }
 
     void Update()
     {
-        Bar.fillAmount = HealthPoint;
+        HealthBarAnimation();
     }
 }

@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject[] Weapons;
+    [SerializeField] 
+    private GameObject[] Weapons;
     private int _currentWeaponIndex = 0;
 
     private void SwitchWeapon(int index)
