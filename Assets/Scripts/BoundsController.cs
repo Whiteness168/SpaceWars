@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class BoundsController : MonoBehaviour
 {
-    private float screenHeight;
-    private float objectHeight;
-    private Camera _camera;
     [SerializeField]
     private bool _bottomStart;
+
+    private float screenHeight;
+    private float objectHeight;
+
+    private Camera _camera;
+    private DeathController _deathController;
 
     private void DestroyOutOfBounds()
     {
@@ -14,9 +17,9 @@ public class BoundsController : MonoBehaviour
         {
             Vector3 screenToWorldPoint = _camera.ScreenToWorldPoint(new Vector3(0, 0, 0));
 
-            if (transform.position.y < screenToWorldPoint.y /*+ /*objectHeight*/)
+            if (transform.position.y < screenToWorldPoint.y)
             {
-                GetComponent<DeathController>().Die();
+                _deathController.Delete();
             }
         }
         else
@@ -25,14 +28,15 @@ public class BoundsController : MonoBehaviour
 
             if (transform.position.y > screenToWorldPoint.y + objectHeight / 2)
             {
-                GetComponent<DeathController>().Die();
+                _deathController.Delete();
             }
         }
-    }    
+    }
 
-    void Start()
+    private void Awake()
     {
         _camera = Camera.main;
+        _deathController = GetComponent<DeathController>();
         screenHeight = Screen.height;
         objectHeight = GetComponent<Renderer>().bounds.size.y;
     }

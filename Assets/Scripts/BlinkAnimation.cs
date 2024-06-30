@@ -9,6 +9,7 @@ public class BlinkAnimation : MonoBehaviour
     private Material _matDefault;
     [SerializeField]
     private SpriteRenderer _spriteRend;
+
     private Health _health;
     private async void PerformBlink()
     {
@@ -24,7 +25,7 @@ public class BlinkAnimation : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         _health = GetComponent<Health>();
     }

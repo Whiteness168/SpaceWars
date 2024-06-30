@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Pool))]
 public class SpawnerMeteorController : MonoBehaviour
 {
     private float _randomX;
@@ -8,9 +9,8 @@ public class SpawnerMeteorController : MonoBehaviour
     private float _spawnDelay;
     [SerializeField]
     private Transform _firePoint;
-    [SerializeField]
-    private GameObject _missileType;
     private float _nextSpawn = 0.0f;
+    private Pool _pool;
 
     private void SpawnEnemy()
     {
@@ -19,8 +19,13 @@ public class SpawnerMeteorController : MonoBehaviour
             _nextSpawn = Time.time + _spawnDelay;
             _randomX = Random.Range(-9f, 9f);
             _whereToSpawn = new Vector2(_randomX, _firePoint.position.y);
-            Instantiate(_missileType, _whereToSpawn, Quaternion.identity);
+            _pool.GetFreeElement(_whereToSpawn, Quaternion.identity);
         }
+    }
+
+    private void Awake()
+    {
+        _pool = GetComponent<Pool>();
     }
 
     void Update()

@@ -15,7 +15,6 @@ public class AOEDamageDealer : DamageDealer
         {
             if (collision.name != "SpaceShip")
             {
-                Debug.Log("Hit");
                 _collision.enabled = false;
                 _explosion.enabled = true;
             }
@@ -31,11 +30,12 @@ public class AOEDamageDealer : DamageDealer
             if (collision.name != "SpaceShip")
             {
                 DealDamage(collision.GetComponent<Health>());
-                GetComponent<DeathController>().Die();
+                _deathController.Die();
             }
         }
     }
-    void Start()
+
+    private void OnEnable()
     {
         _collision.enabled = true;
         _explosion.enabled = false;

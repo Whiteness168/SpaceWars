@@ -5,6 +5,8 @@ public class WeaponSwitcher : MonoBehaviour
     [SerializeField] 
     private GameObject[] Weapons;
     private int _currentWeaponIndex = 0;
+    public int CurrentWeaponIndex
+    {  get { return _currentWeaponIndex; } }
 
     private void SwitchWeapon(int index)
     {
@@ -17,8 +19,13 @@ public class WeaponSwitcher : MonoBehaviour
 
     private void StartChoiceGun()
     {
-        Weapons[1].SetActive(false);
-        Weapons[2].SetActive(false);
+        for (int i = 0; i < Weapons.Length; i++)
+        {
+            if (i > _currentWeaponIndex)
+            {
+                Weapons[i].SetActive(false);
+            }
+        }
     }
 
     void Start()
@@ -31,17 +38,17 @@ public class WeaponSwitcher : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1))
         {
             SwitchWeapon(0);
-            Debug.Log(0 + "Active");
+            Debug.Log("firstWeapon" + "Active");
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
             SwitchWeapon(1);
-            Debug.Log(1 + "Active");
+            Debug.Log("secondWeapon" + "Active");
         }
         if (Input.GetKey(KeyCode.Alpha3))
         {
             SwitchWeapon(2);
-            Debug.Log(2 + "Active");
+            Debug.Log("thirdWeapon" + "Active");
         }
     }
 }

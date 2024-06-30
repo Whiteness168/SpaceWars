@@ -13,13 +13,13 @@ public class SingleDamageDealer : DamageDealer
                 if (collision.name != "SpaceShip")
                 {
                     DealDamage(health);
-                    GetComponent<DeathController>().Die();
+                    _deathController.Die();
                 }
             }
             else
             {
                 DealDamage(health);
-                GetComponent<DeathController>().Die();
+                _deathController.Die();
             }
         }
     }

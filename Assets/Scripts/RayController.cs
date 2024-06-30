@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-public class RayController : WeaponController
+public class RayController : MonoBehaviour
 {
     [SerializeField] 
     private LayerMask _hitLayer;
@@ -9,15 +10,26 @@ public class RayController : WeaponController
     private Vector2 _laserStart;
     private Vector2 _laserDirection;
     private LineRenderer _lineRenderer;
+    public LineRenderer LineRenderer
+    {  get { return _lineRenderer; } }
     private Ray2D _laserRay;
+    private bool _laserActive;
+    public bool LaserActive
+    {  get { return _laserActive; } }
     private RaycastHit2D _hit;
     public RaycastHit2D Hit
     {
         get { return _hit; }
     }
+    private KeyCode _activationKey = KeyCode.LeftAlt;
 
+    private AmmoStockpile _ammoStockpile;
+    private WeaponSwitcher _weaponSwitcher;
+    private Sounds _sounds;
 
-    protected override bool IsKeyPressed()
+    public event Action OnRay;
+
+    private bool IsKeyPressed()
     {
         if (Input.GetKey(_activationKey))
         {
@@ -33,17 +45,31 @@ public class RayController : WeaponController
     {
         if (IsKeyPressed())
         {
-            _laserStart = transform.position;
-            _laserDirection = transform.up;
+            if (_ammoStockpile.AllAmmoCountCheck(_weaponSwitcher.CurrentWeaponIndex))
+            {
+                _laserStart = transform.position;
+                _laserDirection = transform.up;
 
-            _laserRay = new Ray2D(_laserStart, _laserDirection);
+                _laserRay = new Ray2D(_laserStart, _laserDirection);
 
-            _lineRenderer.enabled = true;
-            _lineRenderer.SetPosition(0, _laserStart);
+                _lineRenderer.enabled = true;
+                _lineRenderer.SetPosition(0, _laserStart);
+
+                _laserActive = true;
+
+                _ammoStockpile.DecrementAmmo(_weaponSwitcher.CurrentWeaponIndex);
+
+                if (_ammoStockpile.LaserCharge > 0.0f)
+                {
+                    _sounds.PlayLoopingSound();
+                }
+            }
         }
         else
         {
             _lineRenderer.enabled = false;
+            _laserActive = false;
+            _sounds.StopLoopingSound();
         }
     }
 
@@ -62,6 +88,22 @@ public class RayController : WeaponController
         }
     }
 
+    private void LaserStop()
+    {
+        if (_ammoStockpile.LaserCharge < 0.0f)
+        {
+            _lineRenderer.enabled = false;
+            _sounds.StopLoopingSound();
+        }
+    }
+
+    void Awake()
+    {
+        _ammoStockpile = GameObject.Find("SpaceShip").GetComponent<AmmoStockpile>();
+        _weaponSwitcher = GameObject.Find("Ship's Armament").GetComponent<WeaponSwitcher>();
+        _sounds = GetComponent<Sounds>();
+    }
+
     void Start()
     {
         _lineRenderer = GetComponent<LineRenderer>();
@@ -72,5 +114,11 @@ public class RayController : WeaponController
     {
         LaserShooting();
         DetectLaserCollision();
+        LaserStop();
+
+        if (gameObject == true)
+        {
+            OnRay?.Invoke();
+        }
     }
 }

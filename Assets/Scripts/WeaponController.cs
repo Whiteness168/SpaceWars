@@ -1,10 +1,16 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Pool))]
 public class WeaponController : MonoBehaviour
 {
-    protected KeyCode _activationKey = KeyCode.LeftAlt;
+    private AmmoStockpile _ammoStockpile;
+    private WeaponSwitcher _weaponSwitcher;
+    private Pool _pool;
+    private Sounds _sounds;
 
-    protected virtual bool IsKeyPressed()
+    private KeyCode _activationKey = KeyCode.LeftAlt;
+
+    private bool IsKeyPressed()
     {
         if (Input.GetKeyDown(_activationKey))
         {
@@ -15,11 +21,29 @@ public class WeaponController : MonoBehaviour
             return false;
         }
     }
-    protected void Shoot(GameObject missileType, Transform firePoint)
+
+    protected void Shoot(Transform firePoint)
     {
         if (IsKeyPressed())
         {
-            Instantiate(missileType, firePoint.position, firePoint.rotation);
+            if (_ammoStockpile.AllAmmoCountCheck(_weaponSwitcher.CurrentWeaponIndex))
+            {
+                _pool.GetFreeElement(firePoint.position, firePoint.rotation);
+                _ammoStockpile.DecrementAmmo(_weaponSwitcher.CurrentWeaponIndex);
+                _sounds.PlayClip();
+            }
+            else
+            {
+                Debug.Log("Патроны кончились");
+            }
         }
+    }
+
+    void Awake()
+    {
+        _ammoStockpile = GameObject.Find("SpaceShip").GetComponent<AmmoStockpile>();
+        _weaponSwitcher = GameObject.Find("Ship's Armament").GetComponent<WeaponSwitcher>();
+        _pool = GetComponent<Pool>();
+        _sounds = GetComponent<Sounds>();
     }
 }

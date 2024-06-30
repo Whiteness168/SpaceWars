@@ -11,14 +11,13 @@ public class MoveController : MonoBehaviour
     [SerializeField]
     private int _direction;
 
-    private void Move(float direction)
+    private void Move()
     {
-        _rb.AddForce(_speed * direction * transform.up, ForceMode2D.Impulse);
+        _rb.AddForce(_speed * _direction * transform.up, ForceMode2D.Impulse);
     }
 
-    void Start()
+    void OnEnable()
     {
-        Move(_direction);
+        Move();
     }
 }
-
