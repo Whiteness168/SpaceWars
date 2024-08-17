@@ -1,19 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PauseManager : MonoBehaviour
+public class PauseManager : BaseMenuPanel
 {
-    [SerializeField]
-    private Button _buttonContinue;
-    [SerializeField]
-    private Button _buttonMainMenu;
-    [SerializeField]
-    private Button _buttonQuit;
-    [SerializeField]
-    private GameObject _pauseMenu;
-
-    private bool _pauseGame;
-    private KeyCode _key = KeyCode.Escape;
+    private KeyCode _key;
 
     private bool IsKeyPressed()
     {
@@ -25,55 +14,32 @@ public class PauseManager : MonoBehaviour
         return false;
     }
 
-    private void GoToMainMenu()
+    private void Awake()
     {
-        Resume();
-        SceneTransition.SwitchToScene("DemoMenu");
+        _key = KeyCode.Escape;
     }
 
-    private void ExitGame()
-    {
-        Application.Quit();
-    }
-
-    private void Pause()
-    {
-        _pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        _pauseGame = true;
-    }
-
-    private void Resume()
-    { 
-        _pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        _pauseGame = false;
-    }
-
-    private void CheckCondition()
+    protected override void CheckCondition()
     {
         if (IsKeyPressed())
         {
-            if (!_pauseGame)
+            if (!_menuPanel.activeSelf)
             {
+                ShowPanel();
                 Pause();
             }
             else
             {
+                HidePanel();
                 Resume();
             }
         }
     }
 
-    void Start()
+    protected override void Start()
     {
-        _buttonContinue.onClick.AddListener(Resume);
-        _buttonMainMenu.onClick.AddListener(GoToMainMenu);
-        _buttonQuit.onClick.AddListener(ExitGame);
-    }
-
-    void Update()
-    {
-        CheckCondition();
+        _firstButton.onClick.AddListener(Resume);
+        base.Start();
+        
     }
 }

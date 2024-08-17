@@ -4,11 +4,16 @@ public class Armor : MonoBehaviour
 {
     [SerializeField]
     private float _armorPoint;
+
     private Sounds _sounds;
+    private float _startArmorPoint;
 
     public float ArmorPoint
     {
-        get { return _armorPoint; }
+        get 
+        {
+            return _armorPoint; 
+        }
     }
 
     public void BlockDamage(float damage)
@@ -21,14 +26,9 @@ public class Armor : MonoBehaviour
         }
     }
 
-    private void ResetArmor()
+    public void NormalizeArmor()
     {
-        _armorPoint = 0;
-    }
-
-    private void NormalizeArmor()
-    {
-        _armorPoint = 1f;
+        _armorPoint = _startArmorPoint;
     }
 
     public void AddArmorPoint(float armorPoint)
@@ -45,8 +45,14 @@ public class Armor : MonoBehaviour
         }
     }
 
+    private void ResetArmor()
+    {
+        _armorPoint = 0;
+    }
+
     private void Awake()
     {
         _sounds = GetComponent<Sounds>();
+        _startArmorPoint = _armorPoint;
     }
 }

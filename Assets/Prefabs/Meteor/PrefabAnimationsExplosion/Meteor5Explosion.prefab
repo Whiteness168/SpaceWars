@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6593535065914110836}
   - component: {fileID: 9144965469171432229}
   - component: {fileID: 661989840653659121}
-  - component: {fileID: 8485699677436319183}
   - component: {fileID: -4794875749640333127}
   m_Layer: 0
   m_Name: Meteor5Explosion
@@ -258,18 +257,6 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 550efe1702ceaa44c8ad9d86f111b6c1, type: 3}
   _rangePitchOne: 0
   _rangePitchTwo: 0
---- !u!114 &8485699677436319183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2466144874378605203}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aff7b0685d58ff4f8523956bba2eea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-4794875749640333127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,3 +269,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51160a943fecf414093fa373ea5f38e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _poolObject: {fileID: 2728070921164174837}
+  _sounds: {fileID: 661989840653659121}

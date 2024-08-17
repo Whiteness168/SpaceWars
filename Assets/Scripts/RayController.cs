@@ -3,33 +3,55 @@ using UnityEngine;
 
 public class RayController : MonoBehaviour
 {
+    [SerializeField]
+    private Sounds _sounds;
+    [SerializeField]
+    private bool _rayForEnemy;
+    [SerializeField]
+    private float _laserLength;
     [SerializeField] 
     private LayerMask _hitLayer;
-    [SerializeField] 
-    private float _laserLength;
-    private Vector2 _laserStart;
-    private Vector2 _laserDirection;
-    private LineRenderer _lineRenderer;
-    public LineRenderer LineRenderer
-    {  get { return _lineRenderer; } }
+    [SerializeField]
+    private AmmoStockpile _ammoStockpile;
+    [SerializeField]
+    private WeaponSwitcher _weaponSwitcher;
+
     private Ray2D _laserRay;
     private bool _laserActive;
-    public bool LaserActive
-    {  get { return _laserActive; } }
     private RaycastHit2D _hit;
-    public RaycastHit2D Hit
-    {
-        get { return _hit; }
-    }
+    private Vector2 _laserStart;
+    private Vector2 _laserDirection;
     private KeyCode _activationKey = KeyCode.LeftAlt;
-
-    private AmmoStockpile _ammoStockpile;
-    private WeaponSwitcher _weaponSwitcher;
-    private Sounds _sounds;
+    private LineRenderer _lineRenderer;
 
     public event Action OnRay;
 
-    private bool IsKeyPressed()
+    public LineRenderer LineRenderer
+    { 
+        get 
+        {
+            return _lineRenderer;
+        } 
+    }
+
+    public bool LaserActive
+    {  
+        get 
+        { 
+            return _laserActive;
+        } 
+    }
+
+
+    public RaycastHit2D Hit
+    {
+        get
+        { 
+            return _hit;
+        }
+    }
+
+    public bool IsKeyPressed()
     {
         if (Input.GetKey(_activationKey))
         {
@@ -43,12 +65,19 @@ public class RayController : MonoBehaviour
      
     private void LaserShooting()
     {
-        if (IsKeyPressed())
+        if (_rayForEnemy || IsKeyPressed() && _ammoStockpile.LaserCharge > 0.0f )
         {
-            if (_ammoStockpile.AllAmmoCountCheck(_weaponSwitcher.CurrentWeaponIndex))
+            if (_rayForEnemy || _ammoStockpile.AllAmmoCountCheck(_weaponSwitcher.CurrentWeaponIndex))
             {
+                if (_rayForEnemy)
+                {
+                    _laserDirection = -transform.up;
+                }
+                else
+                {
+                    _laserDirection = transform.up;
+                }
                 _laserStart = transform.position;
-                _laserDirection = transform.up;
 
                 _laserRay = new Ray2D(_laserStart, _laserDirection);
 
@@ -57,19 +86,16 @@ public class RayController : MonoBehaviour
 
                 _laserActive = true;
 
-                _ammoStockpile.DecrementAmmo(_weaponSwitcher.CurrentWeaponIndex);
-
-                if (_ammoStockpile.LaserCharge > 0.0f)
+                if (_ammoStockpile != null)
                 {
-                    _sounds.PlayLoopingSound();
+                    _ammoStockpile.DecrementAmmo(_weaponSwitcher.CurrentWeaponIndex);
+
+                    if (_ammoStockpile.LaserCharge > 0.0f)
+                    {
+                        _sounds.PlayLoopingSound();
+                    }
                 }
             }
-        }
-        else
-        {
-            _lineRenderer.enabled = false;
-            _laserActive = false;
-            _sounds.StopLoopingSound();
         }
     }
 
@@ -80,7 +106,6 @@ public class RayController : MonoBehaviour
         if (_hit.collider != null)
         {
             _lineRenderer.SetPosition(1, _hit.point);
-            Debug.Log("Столкновение с объектом: " + _hit.collider.name);
         }
         else
         {
@@ -90,17 +115,19 @@ public class RayController : MonoBehaviour
 
     private void LaserStop()
     {
-        if (_ammoStockpile.LaserCharge < 0.0f)
+        if (_ammoStockpile != null)
         {
-            _lineRenderer.enabled = false;
-            _sounds.StopLoopingSound();
+            if (_ammoStockpile.LaserCharge < 0.0f || !IsKeyPressed())
+            {
+                _lineRenderer.enabled = false;
+                _laserActive = false;
+                _sounds.StopLoopingSound();
+            }
         }
     }
 
     void Awake()
     {
-        _ammoStockpile = GameObject.Find("SpaceShip").GetComponent<AmmoStockpile>();
-        _weaponSwitcher = GameObject.Find("Ship's Armament").GetComponent<WeaponSwitcher>();
         _sounds = GetComponent<Sounds>();
     }
 

@@ -2,17 +2,25 @@ using UnityEngine;
 
 public class PlayerMoveController : MoveController
 {
-    private float _horizontalMovement;
-    public float HorizontalMovement
-    {
-        get { return _horizontalMovement; }
-    }
+    private Camera _camera;
     private float _verticalMovement;
+    private float _horizontalMovement;
+
     public float VerticalMovement
     {
-        get { return _verticalMovement; }
+        get 
+        {
+            return _verticalMovement;
+        }
     }
-    private Camera _camera;
+    public float HorizontalMovement
+    {
+        get 
+        {
+            return _horizontalMovement;
+        }
+    }
+
 
     private void PlayfieldConstriction(float horizontalMovement, float verticalMovement)
     {

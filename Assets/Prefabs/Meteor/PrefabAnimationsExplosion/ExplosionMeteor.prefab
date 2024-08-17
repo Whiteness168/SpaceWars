@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5296148825668251920}
   - component: {fileID: -8365918929970631578}
   - component: {fileID: -8391480466384400660}
-  - component: {fileID: -1522168059734012522}
   - component: {fileID: 346363573141251756}
   m_Layer: 0
   m_Name: ExplosionMeteor
@@ -258,18 +257,6 @@ MonoBehaviour:
   _clip: {fileID: 8300000, guid: 550efe1702ceaa44c8ad9d86f111b6c1, type: 3}
   _rangePitchOne: 0
   _rangePitchTwo: 0
---- !u!114 &-1522168059734012522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8791513368689616035}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aff7b0685d58ff4f8523956bba2eea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &346363573141251756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,3 +269,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51160a943fecf414093fa373ea5f38e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _poolObject: {fileID: 9071434281518834629}
+  _sounds: {fileID: -8391480466384400660}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -3154528064256295440}
   - component: {fileID: 1426087781890955448}
   - component: {fileID: 4154177591502764304}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AmmoSet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

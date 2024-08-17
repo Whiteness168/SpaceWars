@@ -26,14 +26,9 @@ public class WeaponSwitcher : MonoBehaviour
                 Weapons[i].SetActive(false);
             }
         }
-    }
+    } 
 
-    void Start()
-    {
-        StartChoiceGun();
-    }
-
-    void Update()
+    private void CheckKeyPressed()
     {
         if (Input.GetKey(KeyCode.Alpha1))
         {
@@ -50,5 +45,15 @@ public class WeaponSwitcher : MonoBehaviour
             SwitchWeapon(2);
             Debug.Log("thirdWeapon" + "Active");
         }
+    }
+
+    void Start()
+    {
+        StartChoiceGun();
+    }
+
+    void Update()
+    {
+        CheckKeyPressed();
     }
 }

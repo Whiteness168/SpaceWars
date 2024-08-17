@@ -1,18 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
-public class ShowAmmountAmmoController : MonoBehaviour
+public class ShowAmountAmmoController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private TextMeshProUGUI _textField;
+    [SerializeField]
+    private float _fontSize;
+
+    private AmmoStockpile _ammoStockpile;
+    private WeaponSwitcher _weaponSwitcher;
+    private readonly string _bulletAmount = "∞";
+
+    private void SetText()
     {
-        
+        switch (_weaponSwitcher.CurrentWeaponIndex)
+        {
+            case 0:
+            {
+                _textField.text = _bulletAmount;
+                break;
+            }
+            case 1:
+            {
+                _textField.text = " ";
+                break;
+            }
+            case 2:
+            {
+                _textField.text = _ammoStockpile.RocketAmount.ToString();
+                break;
+            }
+        }
     }
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        _ammoStockpile = GameObject.Find("SpaceShip").GetComponent<AmmoStockpile>();
+        _weaponSwitcher = GameObject.Find("Ship's Armament").GetComponent<WeaponSwitcher>();
+    }
+
+    private void Start()
+    {
+        _textField.fontSize = _fontSize;
+    }
+
     void Update()
     {
-        
+        SetText();
     }
 }

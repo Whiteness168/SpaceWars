@@ -3,8 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(Pool))]
 public class WeaponController : MonoBehaviour
 {
+    [SerializeField]
     private AmmoStockpile _ammoStockpile;
+    [SerializeField]
     private WeaponSwitcher _weaponSwitcher;
+
     private Pool _pool;
     private Sounds _sounds;
 
@@ -26,7 +29,7 @@ public class WeaponController : MonoBehaviour
     {
         if (IsKeyPressed())
         {
-            if (_ammoStockpile.AllAmmoCountCheck(_weaponSwitcher.CurrentWeaponIndex))
+            if (_ammoStockpile.AllAmmoCountCheck(_weaponSwitcher.CurrentWeaponIndex) || gameObject.name == "AlienEnemy")
             {
                 _pool.GetFreeElement(firePoint.position, firePoint.rotation);
                 _ammoStockpile.DecrementAmmo(_weaponSwitcher.CurrentWeaponIndex);
@@ -41,8 +44,6 @@ public class WeaponController : MonoBehaviour
 
     void Awake()
     {
-        _ammoStockpile = GameObject.Find("SpaceShip").GetComponent<AmmoStockpile>();
-        _weaponSwitcher = GameObject.Find("Ship's Armament").GetComponent<WeaponSwitcher>();
         _pool = GetComponent<Pool>();
         _sounds = GetComponent<Sounds>();
     }

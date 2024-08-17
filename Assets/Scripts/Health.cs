@@ -1,34 +1,43 @@
 using UnityEngine;
-using System.Threading.Tasks;
+using System;
 
 public class Health : MonoBehaviour
 {
     [SerializeField]
     private float _healthPoint;
-    private float _startHealthPoint;
+
+    private Armor _armor;
     private Sounds _sounds;
+    private float _startHealthPoint;
+    private float _reducedLaserResistance;
+
+    public event Action TookDamage;
+    public event Action HealthZero;
 
     public float HealthPoint
     {
-        get { return _healthPoint; }
+        get 
+        { 
+            return _healthPoint;
+        }
     }
-    private bool _functionCalled;
-    public bool FunctionCalled
-    { 
-        get { return _functionCalled; } 
-    }
-    private float _reducedLaserResistance;
+
     public float ReducedLaserResistance
     {
-        set { _reducedLaserResistance = value;}
-        get { return _reducedLaserResistance;}
+        set
+        { 
+            _reducedLaserResistance = value;
+        }
+        get
+        {
+            return _reducedLaserResistance;
+        }
     }
-    private Armor _armor;
-    public bool IsAlive => _healthPoint <= 0f;
-
+    
     public void TakeDamage(float damage)
     {
         damage += _reducedLaserResistance;
+        TookDamage?.Invoke();
 
         if (_armor != null && _armor.ArmorPoint > 0)
         {
@@ -37,13 +46,11 @@ public class Health : MonoBehaviour
             if (_armor.ArmorPoint < 0)
             {
                 _healthPoint -= Mathf.Abs(_armor.ArmorPoint);
-                _functionCalled = true;
             }
         }
         else
         {
             _healthPoint -= damage;
-            _functionCalled = true;
         }
     }
 
@@ -58,15 +65,6 @@ public class Health : MonoBehaviour
         _healthPoint += healthPoint;
     }
 
-    private async void DefaultFunctionCalled()
-    {
-        if (_functionCalled == true)
-        {
-            await Task.Delay(100);
-            _functionCalled = false;
-        }
-    }
-
     public void NormalizeHealth()
     {
         _healthPoint = _startHealthPoint;
@@ -77,10 +75,5 @@ public class Health : MonoBehaviour
         _armor = gameObject.GetComponent<Armor>();
         _startHealthPoint = _healthPoint;
         _sounds = GetComponent<Sounds>();
-    }
-
-    private void Update()
-    {
-        DefaultFunctionCalled();
     }
 }

@@ -1,27 +1,25 @@
-using UnityEngine;
-using UnityEngine.UI;
-
-public class MenuManager : MonoBehaviour
+public class MenuManager : BaseMenuPanel
 {
-    [SerializeField]
-    private Button _buttonStart;
-    [SerializeField]
-    private Button _buttonLevel;
-    [SerializeField]
-    private Button _buttonQuit;
-
     private void OnClickStart()
     {
         SceneTransition.SwitchToScene("GamePlay");
     }
 
-    private void ExitGame()
+    private void ShowLevelMenu()
     {
-        Application.Quit();
+
     }
-    void Start()
+
+    protected override void Start()
     {
-        _buttonStart.onClick.AddListener(OnClickStart);
-        _buttonQuit.onClick.AddListener(ExitGame);
+        _firstButton.onClick.AddListener(OnClickStart);
+        _secondButton.onClick.AddListener(ShowLevelMenu);
+        _thirdButton.onClick.AddListener(ExitGame);
+        Resume();
+    }
+
+    protected override void Update()
+    {
+
     }
 }

@@ -5,8 +5,8 @@ public class BoundsController : MonoBehaviour
     [SerializeField]
     private bool _bottomStart;
 
-    private float screenHeight;
-    private float objectHeight;
+    private float _screenHeight;
+    private float _objectHeight;
 
     private Camera _camera;
     private DeathController _deathController;
@@ -24,9 +24,9 @@ public class BoundsController : MonoBehaviour
         }
         else
         {
-            Vector3 screenToWorldPoint = _camera.ScreenToWorldPoint(new Vector3(0, screenHeight, 0));
+            Vector3 screenToWorldPoint = _camera.ScreenToWorldPoint(new Vector3(0, _screenHeight, 0));
 
-            if (transform.position.y > screenToWorldPoint.y + objectHeight / 2)
+            if (transform.position.y > screenToWorldPoint.y + _objectHeight / 2)
             {
                 _deathController.Delete();
             }
@@ -37,8 +37,8 @@ public class BoundsController : MonoBehaviour
     {
         _camera = Camera.main;
         _deathController = GetComponent<DeathController>();
-        screenHeight = Screen.height;
-        objectHeight = GetComponent<Renderer>().bounds.size.y;
+        _screenHeight = Screen.height;
+        _objectHeight = GetComponent<Renderer>().bounds.size.y;
     }
 
     void Update()

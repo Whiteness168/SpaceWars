@@ -4,12 +4,8 @@ public abstract class DamageDealer : MonoBehaviour
 {
     [SerializeField]
     protected float _damage;
+
     private float _bonusDamage;
-    public float BonusDamage
-    {
-        get { return _bonusDamage; }
-        set { _bonusDamage = value; }
-    }
 
     protected DeathController _deathController;
 

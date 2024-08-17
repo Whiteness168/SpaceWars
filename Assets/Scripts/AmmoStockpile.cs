@@ -4,18 +4,28 @@ public class AmmoStockpile : MonoBehaviour
 {
     [SerializeField]
     private int _rocketAmount;
-    public int RocketAmount
-    { get { return _rocketAmount; } }
     [SerializeField]
     private float _laserCharge;
-    public float LaserCharge
-    {
-        get { return _laserCharge; }
-    }
+
     private float _timer;
     private bool _hasAmmo;
-    private RayController _rayController;
     private Sounds _sounds;
+    private RayController _rayController;
+
+    public int RocketAmount
+    {
+        get
+        {
+            return _rocketAmount;
+        }
+    }
+    public float LaserCharge
+    {
+        get
+        {
+            return _laserCharge;
+        }
+    }
 
     public void AddRocket(int rocketCount)
     {
@@ -23,9 +33,47 @@ public class AmmoStockpile : MonoBehaviour
         _rocketAmount += rocketCount;
     }
 
+    public bool AllAmmoCountCheck(int currentWeapon)
+    {
+        switch (currentWeapon)
+        {
+            case 1:
+            {
+                return LaserChargeCheck();
+            }
+            case 2:
+            {
+                return RocketCountCheck();
+            }
+
+            default:
+            {
+                return true;
+            }
+        }
+    }
+
+    public void DecrementAmmo(int currentWeapon)
+    {
+        switch (currentWeapon)
+        {
+            case 1:
+            {
+                UseLaserCharge();
+                break;
+            }
+            case 2:
+            {
+                _rocketAmount--;
+                Debug.Log("--");
+                break;
+            }
+        }
+    }
+
     private void RechargeLaser()
     {
-        if (!_rayController.LaserActive && _laserCharge < 1.0f)
+        if (!_rayController.IsKeyPressed() && _laserCharge < 1.0f)
         {
             _timer += Time.deltaTime;
 
@@ -43,7 +91,7 @@ public class AmmoStockpile : MonoBehaviour
         {
             return true;
         }
-        
+
         return false;
     }
 
@@ -67,42 +115,6 @@ public class AmmoStockpile : MonoBehaviour
             {
                 _laserCharge -= 0.005f;
                 _timer = 0f;
-            }
-        }
-    }
-
-    public bool AllAmmoCountCheck(int currentWeapon)
-    {
-        switch (currentWeapon)
-        {
-            case 1:
-            {
-                return LaserChargeCheck();
-            }
-            case 2:
-            {
-                return RocketCountCheck();
-            }
-
-            default:
-            return true;
-        }
-    }
-
-    public void DecrementAmmo(int currentWeapon)
-    {
-        switch (currentWeapon)
-        {
-            case 1:
-            {
-                UseLaserCharge();
-                break;
-            }
-            case 2:
-            {
-                _rocketAmount--;
-                Debug.Log("--");
-                break;
             }
         }
     }

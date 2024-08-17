@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: -1835479186254139751}
   - component: {fileID: 6771104991441615957}
   - component: {fileID: -8227665445764685866}
-  - component: {fileID: 4755404734945565673}
+  - component: {fileID: 6979086750360380446}
   m_Layer: 0
   m_Name: Meteor 6
   m_TagString: Meteor
@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 0}
   _rb: {fileID: 316323946639308135}
+  _transform: {fileID: 0}
   _speed: 4
   _direction: -1
 --- !u!114 &2999319512961887862
@@ -379,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a994b37482ec14e893c0e235b54a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSource: {fileID: -1835479186254139751}
   _sounds: {fileID: 0}
   _volume: 1
   _clip: {fileID: 8300000, guid: 550efe1702ceaa44c8ad9d86f111b6c1, type: 3}
@@ -402,7 +404,7 @@ MonoBehaviour:
   _minCapacity: 3
   _maxCapacity: 2147483647
   _autoExpand: 1
---- !u!114 &4755404734945565673
+--- !u!114 &6979086750360380446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -411,8 +413,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3710413724240840463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6646116f42c5de46ab82915f1141e18, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aff7b0685d58ff4f8523956bba2eea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosion: {fileID: 8418661852064967135, guid: 30e71480b8a47ef40b36f1fc1d6a03f5, type: 3}
-  _explosionAnimation: {fileID: 5684760458349599598, guid: b4ce33646070ff442a029c6703646e03, type: 3}
+  _explosionParticle: {fileID: 8418661852064967135, guid: 30e71480b8a47ef40b36f1fc1d6a03f5, type: 3}
+  _pool: {fileID: -8227665445764685866}

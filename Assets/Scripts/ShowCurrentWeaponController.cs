@@ -4,6 +4,7 @@ public class ShowCurrentWeaponController : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] _currentWeapon;
+
     private WeaponSwitcher _weaponSwitcher;
     private int _currentWeaponIndex = 0;
 
@@ -31,6 +32,7 @@ public class ShowCurrentWeaponController : MonoBehaviour
     {
         _weaponSwitcher = GameObject.Find("Ship's Armament").GetComponent<WeaponSwitcher>();
     }
+
     void Start()
     {
         StartChoiceWeapon();

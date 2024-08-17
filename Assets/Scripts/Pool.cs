@@ -4,20 +4,28 @@ using UnityEngine;
 public class Pool : MonoBehaviour
 {
     [SerializeField]
-    private PoolObject[] _prefab;
-    [Space(10)]
-    [SerializeField]
-    private Transform _container;
-    [Space(10)]
-    [SerializeField]
     private int _minCapacity;
     [SerializeField]
     private int _maxCapacity;
     [Space(10)]
     [SerializeField]
     private bool _autoExpand;
+    [Space(10)]
+    [SerializeField]
+    private Transform _container;
+    [Space(10)]
+    [SerializeField]
+    private PoolObject[] _prefab;
 
     private List<PoolObject> _pool;
+
+    public List<PoolObject> PoolObject 
+    { 
+        get 
+        { 
+            return _pool;
+        }
+    }
 
     private void OnValidate()
     {
@@ -86,7 +94,6 @@ public class Pool : MonoBehaviour
     {
         if (TryGetElement(out var element))
         {
-            Debug.Log($"{gameObject.name} Spawn new object");
             return element;
         }
 
@@ -117,7 +124,7 @@ public class Pool : MonoBehaviour
         return element;
     }
 
-    private void Start()
+    private void Awake()
     {
         CreatePool();
     }

@@ -595,8 +595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00bb34949627fe4cb409d3e594506e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 575846589}
-  audioSource: {fileID: 575846593}
+  _button: {fileID: 575846589}
+  _audioSource: {fileID: 575846593}
 --- !u!1 &674674216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1371,7 @@ GameObject:
   - component: {fileID: 1746044052}
   - component: {fileID: 1746044054}
   - component: {fileID: 1746044053}
+  - component: {fileID: 1746044055}
   m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
@@ -1610,8 +1611,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00bb34949627fe4cb409d3e594506e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1746044049}
-  audioSource: {fileID: 1746044053}
+  _button: {fileID: 1746044049}
+  _audioSource: {fileID: 1746044053}
+--- !u!114 &1746044055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746044047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1746044047}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1971906643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,6 +1792,7 @@ GameObject:
   - component: {fileID: 2077596448}
   - component: {fileID: 2077596450}
   - component: {fileID: 2077596449}
+  - component: {fileID: 2077596451}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1905,8 +1936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00bb34949627fe4cb409d3e594506e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 2077596445}
-  audioSource: {fileID: 2077596450}
+  _button: {fileID: 2077596445}
+  _audioSource: {fileID: 2077596450}
 --- !u!82 &2077596450
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2003,6 +2034,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2077596451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077596443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2077596443}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &8041482605620751494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2089,6 +2149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489d6e169af273349b39b9c88ba2fb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buttonStart: {fileID: 575846589}
-  _buttonLevel: {fileID: 1746044049}
-  _buttonQuit: {fileID: 2077596445}
+  _firstButton: {fileID: 575846589}
+  _secondButton: {fileID: 1746044049}
+  _thirdButton: {fileID: 2077596445}
+  _menuPanel: {fileID: 0}

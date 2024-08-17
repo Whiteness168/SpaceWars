@@ -4,26 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(PoolObject))]
 public class DeathController : MonoBehaviour
 {
-    private bool _functionCalled = false;
-    public bool FunctionCalled
-    {
-        get { return _functionCalled; }
-    }
-
-    private PoolObject _poolObject;
     private Health _health;
+    private PoolObject _poolObject;
+    private ScoreManager _scoreManager;
 
     public event Action OnDeath;
-
-    protected bool CheckHealth()
-    {
-        if (gameObject.GetComponent<Health>() != null && gameObject.GetComponent<Health>().HealthPoint <= 0)
-        {
-            return true;
-        }
-        else
-            return false;
-    }
 
     public void Delete()
     {
@@ -45,20 +30,30 @@ public class DeathController : MonoBehaviour
         }
 
         _poolObject.ReturnToPool();
-        Debug.Log($"{gameObject.name} return to pool");
+    }
+
+    private bool CheckHealth()
+    {
+        if (gameObject.GetComponent<Health>() != null && gameObject.GetComponent<Health>().HealthPoint <= 0)
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
     private void Awake()
     {
         _poolObject = GetComponent<PoolObject>();
         _health = GetComponent<Health>();
+        _scoreManager = GameObject.Find("ScoreBar").GetComponent<ScoreManager>();
     }
-
 
     void Update()
     {
         if (CheckHealth())
         {
+            _scoreManager.CalculateScore(gameObject.name);
             Die();
         }
     }
