@@ -1,50 +1,35 @@
 using UnityEngine;
 
-public class PlayerMoveController : MoveController
-{
+public class PlayerMoveController : MoveController {
     private Camera _camera;
     private float _verticalMovement;
     private float _horizontalMovement;
 
-    public float VerticalMovement
-    {
-        get 
-        {
-            return _verticalMovement;
-        }
+    public float VerticalMovement {
+        get { return _verticalMovement; }
     }
-    public float HorizontalMovement
-    {
-        get 
-        {
-            return _horizontalMovement;
-        }
+    public float HorizontalMovement {
+        get { return _horizontalMovement; }
     }
 
-
-    private void PlayfieldConstriction(float horizontalMovement, float verticalMovement)
-    {
+    private void PlayfieldConstriction(float horizontalMovement, float verticalMovement) {
         var min = _camera.ViewportToWorldPoint(new Vector2(0, 0));
         var max = _camera.ViewportToWorldPoint(new Vector2(1, 1));
 
-        if (transform.position.x > max.x || transform.position.x < min.x)
-        {
+        if (transform.position.x > max.x || transform.position.x < min.x) {
             transform.position -= new Vector3(horizontalMovement, 0, 0) * _speed * Time.deltaTime;
         }
 
-        if (transform.position.y > max.y || transform.position.y < min.y)
-        {
+        if (transform.position.y > max.y || transform.position.y < min.y) {
             transform.position -= new Vector3(0, verticalMovement, 0) * _speed * Time.deltaTime;
         }
     }
 
-    void Start()
-    {
+    void Start() {
         _camera = Camera.main;
     }
 
-    void Update()
-    {
+    void Update() {
         _horizontalMovement = Input.GetAxis("Horizontal");
         _verticalMovement = Input.GetAxis("Vertical");
 

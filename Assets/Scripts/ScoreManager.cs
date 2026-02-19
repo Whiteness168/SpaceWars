@@ -1,63 +1,100 @@
 using UnityEngine;
 using TMPro;
 
-public class ScoreManager : MonoBehaviour
-{
-    [SerializeField]
-    private TextMeshProUGUI _textField;
+public class ScoreManager : MonoBehaviour {
+    [SerializeField] private TextMeshProUGUI _textField;
 
     private int _score;
     private int _currentScore;
     private int _amountKilledAliens;
-    
-    public int Score 
-    { 
-        get 
-        {
-            return _score; 
-        }
+
+    public int Score {
+        get { return _score; }
     }
-    public int AmountKilledAliens
-    {
-        get
-        {
-            return _amountKilledAliens;
-        }
+    public int AmountKilledAliens {
+        get { return _amountKilledAliens; }
     }
 
-    public void CalculateScore(string name)
-    {
-        switch (name)
-        {
-            case "Meteor 5(Clone)":
-            {
+    public void CalculateScore(string name) {
+        switch (name) {
+            case "Medium Meteor 1(Clone)": {
                 _score += 5;
+
                 break;
             }
-            case "Meteor 6(Clone)":
-            {
-                _score += 5; 
+            case "Medium Meteor 2(Clone)": {
+                _score += 5;
+
                 break;
             }
-            case "AlienEnemy(Clone)":
-            {
+            case "Medium Meteor 3(Clone)": {
+                _score += 5;
+
+                break;
+            }
+            case "Medium Meteor 4(Clone)": {
+                _score += 5;
+
+                break;
+            }
+            case "Medium Meteor 5(Clone)": {
+                _score += 5;
+
+                break;
+            }
+            case "Big Meteor 1(Clone)": {
+                _score += 7;
+
+                break;
+            }
+            case "Big Meteor 2(Clone)": {
+                _score += 7;
+
+                break;
+            }
+            case "Big Meteor 3(Clone)": {
+                _score += 7;
+
+                break;
+            }
+            case "Big Meteor 4(Clone)": {
+                _score += 7;
+
+                break;
+            }
+            case "Huge Meteor 1(Clone)": {
+                _score += 10;
+
+                break;
+            }
+            case "Huge Meteor 2(Clone)": {
+                _score += 10;
+
+                break;
+            }
+            case "Huge Meteor 3(Clone)": {
+                _score += 10;
+
+                break;
+            }
+            case "AlienEnemy(Clone)": {
                 _score += 10;
                 _amountKilledAliens += 1;
+
                 break;
             }
             default:
-            _score += 1;
-            break;
+                _score += 1;
+
+                break;
         }
     }
 
-    private void SetText()
-    {
+    private void SetText() {
         _textField.text = _score.ToString();
     }
 
-    private void Update()
-    {
+    private void Update() {
         SetText();
     }
 }

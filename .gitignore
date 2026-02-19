@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/2D pixel asteroids
+.idea/.idea.SpaceWars/.idea/encodings.xml
+.idea/.idea.SpaceWars/.idea/indexLayout.xml
+.idea/.idea.SpaceWars/.idea/vcs.xml

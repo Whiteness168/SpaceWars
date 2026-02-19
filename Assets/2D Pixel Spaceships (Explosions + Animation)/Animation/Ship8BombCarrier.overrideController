@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Ship8BombCarrier
+  m_Controller: {fileID: 9100000, guid: d61aa0ab8104a0d4195e143db1e95c6d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 284a5b4ffe4877c43a50905086c36a1b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a0e1c59714dfa704285e73a5f08b78ab, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1c64034d8f29c82428ec78585b4385ec, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a5abf2cd2d08aa745ba8979177fb2ed1, type: 2}

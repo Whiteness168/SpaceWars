@@ -1,0 +1,434 @@
+fileFormatVersion: 2
+guid: 3ff439b02bbb1b24b8e4cd84632d745a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: ship6-lever_0
+  - first:
+      213: 21300002
+    second: ship6-lever_1
+  - first:
+      213: 21300004
+    second: ship6-lever_2
+  - first:
+      213: 21300006
+    second: ship6-lever_3
+  - first:
+      213: 21300008
+    second: ship6-lever_4
+  - first:
+      213: 21300010
+    second: ship6-lever_5
+  - first:
+      213: 21300012
+    second: ship6-lever_6
+  - first:
+      213: 21300014
+    second: ship6-lever_7
+  - first:
+      213: 21300016
+    second: ship6-lever_8
+  - first:
+      213: 21300018
+    second: ship6-lever_9
+  - first:
+      213: 21300020
+    second: ship6-lever_10
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ship6-lever_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2025d322ae7bb5442ad72bcbf8727469
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 65
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26817b3ebdd9df47bb60b32f32df6bb
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 65
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1ae9b8b593a59469f53e7b05f82b89
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 65
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a4166f0ab63b34f9afa71e25011a65
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 65
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff0a5c3861cf954a8d1771c769dd92d
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 65
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6564fde9688065e41887de024651cdb2
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_6
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 65
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6441ea8d538efda46b5d57a91d9c81aa
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa761d569b20584ca5050a2e82bdc22
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 2
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6fe30e553d4c441ae90655e1bbdbc8
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 2
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea4efc3a9a6f15458a26f4ba44ec160
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship6-lever_10
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 2
+        width: 34
+        height: 63
+      alignment: 9
+      pivot: {x: 0.8427392, y: 0.22788687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb64ec9e96135d447b767871b6544b3a
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3c3a4cb55fd52c14bb3987dcc628cfa8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ship6-lever_0: 21300000
+      ship6-lever_1: 21300002
+      ship6-lever_10: 21300020
+      ship6-lever_2: 21300004
+      ship6-lever_3: 21300006
+      ship6-lever_4: 21300008
+      ship6-lever_5: 21300010
+      ship6-lever_6: 21300012
+      ship6-lever_7: 21300014
+      ship6-lever_8: 21300016
+      ship6-lever_9: 21300018
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

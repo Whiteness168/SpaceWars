@@ -1,20 +1,13 @@
 using System;
 using UnityEngine;
 
-public class RayController : MonoBehaviour
-{
-    [SerializeField]
-    private Sounds _sounds;
-    [SerializeField]
-    private bool _rayForEnemy;
-    [SerializeField]
-    private float _laserLength;
-    [SerializeField] 
-    private LayerMask _hitLayer;
-    [SerializeField]
-    private AmmoStockpile _ammoStockpile;
-    [SerializeField]
-    private WeaponSwitcher _weaponSwitcher;
+public class RayController : MonoBehaviour {
+    [SerializeField] private Sounds _sounds;
+    [SerializeField] private bool _rayForEnemy;
+    [SerializeField] private float _laserLength;
+    [SerializeField] private LayerMask _hitLayer;
+    [SerializeField] private AmmoStockpile _ammoStockpile;
+    [SerializeField] private WeaponSwitcher _weaponSwitcher;
 
     private Ray2D _laserRay;
     private bool _laserActive;
@@ -26,57 +19,37 @@ public class RayController : MonoBehaviour
 
     public event Action OnRay;
 
-    public LineRenderer LineRenderer
-    { 
-        get 
-        {
-            return _lineRenderer;
-        } 
+    public LineRenderer LineRenderer {
+        get { return _lineRenderer; }
     }
 
-    public bool LaserActive
-    {  
-        get 
-        { 
-            return _laserActive;
-        } 
+    public bool LaserActive {
+        get { return _laserActive; }
     }
 
-
-    public RaycastHit2D Hit
-    {
-        get
-        { 
-            return _hit;
-        }
+    public RaycastHit2D Hit {
+        get { return _hit; }
     }
 
-    public bool IsKeyPressed()
-    {
-        if (Input.GetKey(_activationKey))
-        {
+    public bool IsKeyPressed() {
+        if (Input.GetKey(_activationKey)) {
             return true;
         }
-        else
-        {         
+        else {
             return false;
         }
     }
-     
-    private void LaserShooting()
-    {
-        if (_rayForEnemy || IsKeyPressed() && _ammoStockpile.LaserCharge > 0.0f )
-        {
-            if (_rayForEnemy || _ammoStockpile.AllAmmoCountCheck(_weaponSwitcher.CurrentWeaponIndex))
-            {
-                if (_rayForEnemy)
-                {
+
+    private void LaserShooting() {
+        if (_rayForEnemy || IsKeyPressed() && _ammoStockpile.LaserCharge > 0.0f) {
+            if (_rayForEnemy || _ammoStockpile.AllAmmoCountCheck(_weaponSwitcher.CurrentWeaponIndex)) {
+                if (_rayForEnemy) {
                     _laserDirection = -transform.up;
                 }
-                else
-                {
+                else {
                     _laserDirection = transform.up;
                 }
+
                 _laserStart = transform.position;
 
                 _laserRay = new Ray2D(_laserStart, _laserDirection);
@@ -86,12 +59,10 @@ public class RayController : MonoBehaviour
 
                 _laserActive = true;
 
-                if (_ammoStockpile != null)
-                {
+                if (_ammoStockpile != null) {
                     _ammoStockpile.DecrementAmmo(_weaponSwitcher.CurrentWeaponIndex);
 
-                    if (_ammoStockpile.LaserCharge > 0.0f)
-                    {
+                    if (_ammoStockpile.LaserCharge > 0.0f) {
                         _sounds.PlayLoopingSound();
                     }
                 }
@@ -99,26 +70,20 @@ public class RayController : MonoBehaviour
         }
     }
 
-    private void DetectLaserCollision()
-    {
+    private void DetectLaserCollision() {
         _hit = Physics2D.Raycast(_laserRay.origin, _laserRay.direction, _laserLength, _hitLayer);
 
-        if (_hit.collider != null)
-        {
+        if (_hit.collider != null) {
             _lineRenderer.SetPosition(1, _hit.point);
         }
-        else
-        {
+        else {
             _lineRenderer.SetPosition(1, _laserStart + _laserDirection * _laserLength);
         }
     }
 
-    private void LaserStop()
-    {
-        if (_ammoStockpile != null)
-        {
-            if (_ammoStockpile.LaserCharge < 0.0f || !IsKeyPressed())
-            {
+    private void LaserStop() {
+        if (_ammoStockpile != null) {
+            if (_ammoStockpile.LaserCharge < 0.0f || !IsKeyPressed()) {
                 _lineRenderer.enabled = false;
                 _laserActive = false;
                 _sounds.StopLoopingSound();
@@ -126,25 +91,21 @@ public class RayController : MonoBehaviour
         }
     }
 
-    void Awake()
-    {
+    void Awake() {
         _sounds = GetComponent<Sounds>();
     }
 
-    void Start()
-    {
+    void Start() {
         _lineRenderer = GetComponent<LineRenderer>();
         _lineRenderer.enabled = false;
     }
 
-    void Update()
-    {
+    void Update() {
         LaserShooting();
         DetectLaserCollision();
         LaserStop();
 
-        if (gameObject == true)
-        {
+        if (gameObject == true) {
             OnRay?.Invoke();
         }
     }

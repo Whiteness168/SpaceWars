@@ -1,0 +1,509 @@
+fileFormatVersion: 2
+guid: baee4ad0f8f4ebe4d84e04c77330441e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: ship8-cabin1_0
+  - first:
+      213: 21300002
+    second: ship8-cabin1_1
+  - first:
+      213: 21300004
+    second: ship8-cabin1_2
+  - first:
+      213: 21300006
+    second: ship8-cabin1_3
+  - first:
+      213: 21300008
+    second: ship8-cabin1_4
+  - first:
+      213: 21300010
+    second: ship8-cabin1_5
+  - first:
+      213: 21300012
+    second: ship8-cabin1_6
+  - first:
+      213: 21300014
+    second: ship8-cabin1_7
+  - first:
+      213: 21300016
+    second: ship8-cabin1_8
+  - first:
+      213: 21300018
+    second: ship8-cabin1_9
+  - first:
+      213: 21300020
+    second: ship8-cabin1_10
+  - first:
+      213: 21300022
+    second: ship8-cabin1_11
+  - first:
+      213: 21300024
+    second: ship8-cabin1_12
+  - first:
+      213: 21300026
+    second: ship8-cabin1_13
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ship8-cabin1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 185
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c95bc03e0ca9514fb7df960e461290e
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 185
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4215881260fc644965bd756727cc26
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 185
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ecec0e2d61b8f4a84e78dd19688d99
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 185
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87cea1a342231a144a4f15e65c9db6f8
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_4
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 185
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61088e3ceec018c49971c41ba02aa9b5
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_5
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 185
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54454b8e9009fbb449f8f36ff7b47ab0
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_6
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 185
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587f4c863f2311145893abd07d725d88
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1364f318f277f4fae3c68d66462e01
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 114
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96cdc3a126a61b749aa5e2e14a84fbd1
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_9
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 114
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be568fc8a6ca9a4eb0536aaaa7d2944
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_10
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 114
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6712c30f2f1f043a47dcddbe476bac
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_11
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 114
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba8a34de3953f34da97248c60d2272d
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_12
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 114
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd132d0bd3530964e961ae5d77edc644
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ship8-cabin1_13
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 114
+        width: 71
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5085264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad17fa5db2f87d84b9bb841ec60d5a7f
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a99e9850b56e0354b935ccf518d136b7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ship8-cabin1_0: 21300000
+      ship8-cabin1_1: 21300002
+      ship8-cabin1_10: 21300020
+      ship8-cabin1_11: 21300022
+      ship8-cabin1_12: 21300024
+      ship8-cabin1_13: 21300026
+      ship8-cabin1_2: 21300004
+      ship8-cabin1_3: 21300006
+      ship8-cabin1_4: 21300008
+      ship8-cabin1_5: 21300010
+      ship8-cabin1_6: 21300012
+      ship8-cabin1_7: 21300014
+      ship8-cabin1_8: 21300016
+      ship8-cabin1_9: 21300018
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

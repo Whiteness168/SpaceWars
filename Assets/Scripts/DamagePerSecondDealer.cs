@@ -1,22 +1,18 @@
 using UnityEngine;
-public class DamagePerSecondDealer : DamageDealer
-{
-    [SerializeField]
-    private RayController _rayController;
+
+public class DamagePerSecondDealer : DamageDealer {
+    [SerializeField] private RayController _rayController;
 
     private float _damageTimer;
 
-    private void DetectedCollision()
-    {
+    private void DetectedCollision() {
         Collider2D collider = _rayController.Hit.collider;
 
-        if (collider != null && collider.GetComponent<Health>() != null && _rayController.LineRenderer.enabled)
-        {
+        if (collider != null && collider.GetComponent<Health>() != null && _rayController.LineRenderer.enabled) {
             Health health = collider.GetComponent<Health>();
             _damageTimer += Time.deltaTime;
 
-            if (_damageTimer >= 0.01f)
-            {
+            if (_damageTimer >= 0.01f) {
                 DealDamage(health);
                 _damageTimer = 0.0f;
             }
@@ -24,13 +20,11 @@ public class DamagePerSecondDealer : DamageDealer
         else _damageTimer = 0.0f;
     }
 
-    void Start()
-    {
+    void Start() {
         _damageTimer = 0.0f;
     }
 
-    void Update()
-    {
+    void Update() {
         DetectedCollision();
     }
 }

@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51160a943fecf414093fa373ea5f38e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeDelay: 650
   _sounds: {fileID: -2525751141637133716}
   _poolObject: {fileID: 5684361743049697684}
 --- !u!114 &5684361743049697684

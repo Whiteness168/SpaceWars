@@ -1,25 +1,18 @@
-public class MenuManager : BaseMenuPanel
-{
-    private void OnClickStart()
-    {
+public class MenuManager : BaseMenuPanel {
+    private void OnClickStart() {
         SceneTransition.SwitchToScene("GamePlay");
     }
 
-    private void ShowLevelMenu()
-    {
-
+    private void ShowLevelMenu() {
     }
 
-    protected override void Start()
-    {
+    protected override void Start() {
         _firstButton.onClick.AddListener(OnClickStart);
         _secondButton.onClick.AddListener(ShowLevelMenu);
         _thirdButton.onClick.AddListener(ExitGame);
         Resume();
     }
 
-    protected override void Update()
-    {
-
+    protected override void Update() {
     }
 }

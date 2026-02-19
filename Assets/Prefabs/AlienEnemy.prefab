@@ -352,13 +352,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafbc376159a3a148ae496d608269012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pool: {fileID: 4042464593521698823}
   _nextShoot: 0.5
+  _pool: {fileID: 4042464593521698823}
   _shootDelay: 0.5
+  _rayController: {fileID: 276820711368128032}
+  _firePoint: {fileID: 6718945810908824294}
   _player: {fileID: 6254267816049989172, guid: 15d9d71fe3c798e4d87dfce3461b49c6, type: 3}
   _rotationSpeed: 100
-  _firePoint: {fileID: 6718945810908824294}
-  _rayController: {fileID: 276820711368128032}
+  _desiredZAngle: 30
 --- !u!114 &4042464593521698823
 MonoBehaviour:
   m_ObjectHideFlags: 0

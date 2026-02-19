@@ -1,21 +1,17 @@
 using UnityEngine.SceneManagement;
 
-public class LosePanelManager : BaseMenuPanel
-{
+public class LosePanelManager : BaseMenuPanel {
     private string _currentScene;
 
-    private void TryAgainLevel()
-    {
+    private void TryAgainLevel() {
         SceneTransition.SwitchToScene(_currentScene);
     }
 
-    private void Awake()
-    {
+    private void Awake() {
         _currentScene = SceneManager.GetActiveScene().name;
     }
 
-    protected override void Start()
-    {
+    protected override void Start() {
         base.Start();
         _firstButton.onClick.AddListener(TryAgainLevel);
         _secondButton.onClick.AddListener(HidePanel);

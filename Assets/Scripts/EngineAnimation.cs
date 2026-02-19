@@ -1,12 +1,9 @@
 using UnityEngine;
 
-public class EngineAnimation : MonoBehaviour
-{
-    [SerializeField]
-    private Animator Animator;
+public class EngineAnimation : MonoBehaviour {
+    [SerializeField] private Animator Animator;
 
-    void Update()
-    {
+    void Update() {
         Animator.SetFloat("horizontalMovement", Mathf.Abs(GetComponent<PlayerMoveController>().HorizontalMovement));
         Animator.SetFloat("horizontalMovement", Mathf.Abs(GetComponent<PlayerMoveController>().VerticalMovement));
     }
